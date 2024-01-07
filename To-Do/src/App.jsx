@@ -25,11 +25,19 @@ function onclickHandler(){
 
 export default App*/
 function App(){
-    const[count,setCount]=React.useState(0)
+    const[todos,setTodos] = useState([{
+        title:"Go to gym",
+        description:"7-8",
+        status:"True"
+    },{
+        title:"Study time",
+        description:"9-10",
+        status:"False"
+    }])
     
     return(
         <div>
-            <button count ={count} setCount={setCount}></button>
+        {JSON.stringify(todos)}
 
         </div>
     )
