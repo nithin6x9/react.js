@@ -33,20 +33,30 @@ function App(){
         title:"Study time",
         description:"9-10",
         status:"False"
-    }])
+    }]);
+    function addtodo(){
+        setTodos([...todos,{
+            title:"new todo",
+            description:"description of todo"
+        }])
+    }
     
     return(
         <div>
-        {JSON.stringify(todos)}
+        {todos.map(function(todo){
+            return <todo title={todo.title} description={todo.description}/>
+        })}
 
         </div>
     )
 }
+/*
 function Button(props){
     function onButtonClick(){
         props.setCount(props.count+1);
     }
     return <button onClick={onButtonClick}>Counter{props.count}</button>
-}
+}*/
 
 export default App
+/mmkm 
