@@ -43,10 +43,10 @@ function App(){
     
     return(
         <div>
-        {todos.map(function(todo){
-            return <todo title={todo.title} description={todo.description}/>
-        })}
-
+            <button onClick={addtodo}>Add To-Do</button>
+            {todos.map(function(todo){
+                return <Todo title={todo.title} description={todo.description}/>
+            })}
         </div>
     )
 }
@@ -59,4 +59,3 @@ function Button(props){
 }*/
 
 export default App
-/mmkm 
