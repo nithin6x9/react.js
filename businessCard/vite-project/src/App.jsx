@@ -34,6 +34,16 @@ const styles = {
         maxWidth:'400px',
         boxShodow:'0 4px 8px rgba(0,0,0,0.01)',
         backgroundColor: 'f8f9fa'
+    },
+    name:{
+        fontSize:'24px',
+        marginBottom:'10px',
+        color:'#333',
+    },
+    description:{
+        fontSize:'10px',
+        color:'#555',
+        marginBottom:'5px',
     }
     
 }
