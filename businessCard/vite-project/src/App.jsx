@@ -24,3 +24,16 @@ export function BusinessCard(props){
         </div>
     )
 }
+
+const styles = {
+    card:{
+        border:'1px solid #ddd',
+        borderRadius:'8px',
+        padding:'20px',
+        margin:'20px',
+        maxWidth:'400px',
+        boxShodow:'0 4px 8px rgba(0,0,0,0.01)',
+        backgroundColor: 'f8f9fa'
+    }
+    
+}
