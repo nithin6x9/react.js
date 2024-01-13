@@ -1,17 +1,23 @@
 import { useState } from 'react'
-import './App.css';
+//import './App.css';
 
 function NameList(){
-    const [List,setList] = useState(["Jack","Nithin","Jhon"]);
+    const [list,setList] = useState(["Jack","Nithin","Jhon"]);
+    const [name,setName] = useState(" ");
+
     return(
         <div>
             <ul>
-                {List.map((name)=>{
+                {list.map((name)=>{
                     <li key = {name}>{name}</li>
                 })}
             </ul>
+            <input 
+            type = "text"
+            value = {name}
+            onchange = {(e) => setName=(e.target.value)} />
         </div>
-    );i
+    );
 }
 
 function Counter() {
