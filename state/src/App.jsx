@@ -1,8 +1,18 @@
 import { useState } from 'react'
 //import './App.css';
 
-function NameList(){
-    const [list,setList] = useState(["Jack","Nithin","Jhon"]);
+function App(){
+    const [count,setCount]=useState(0);
+    function add (){
+        setCount(count+1);
+
+    }
+    return(
+        <div className="button">
+            <button onClick = {add}> Count ++ = {count} </button>
+        </div>
+
+    /*const [list,setList] = useState(["Jack","Nithin","Jhon"]);
     const [name,setName] = useState(" ");
 
     return(
@@ -37,7 +47,7 @@ function App(){
         <div>
             <Counter />
             <NameList />
-        </div>
+        </div>*/
     )
 }
 export default App
