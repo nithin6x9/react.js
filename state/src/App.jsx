@@ -18,10 +18,10 @@ export default <App>*/
 
 function App(){
     return(
-        <div>
+        <React.Fragment>
             <Header title = "nick"></Header>
             <Header title = "nick2"></Header>
-        </div>
+        </React.Fragment>
     )}
         function Header({title}) {
             return <div>
