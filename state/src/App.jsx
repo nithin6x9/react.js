@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react'
 import './App.css'
-
+/*
 function App() {
   const [count, setCount] = useState(0)
     function add() {
@@ -14,4 +14,18 @@ function App() {
   )
 }
 
+export default <App>*/
+
+function App(){
+    return(
+        <div>
+            <Header title = "nick"></Header>
+            <Header title = "nick2"></Header>
+        </div>
+    )}
+        function Header({title}) {
+            return <div>
+                {title}
+            </div>
+        }
 export default App
