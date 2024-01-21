@@ -26,7 +26,8 @@ function App(){
     return(
         <>
             <button onClick={randi}>Click to make change</button>
-            <h1>my name is {name}</h1>
+            <h1>My name is {name}</h1>
+            <h2>Lol! i made it kudos</h2>
         </>
     )}
 export default App
