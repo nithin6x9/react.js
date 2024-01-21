@@ -17,15 +17,16 @@ function App() {
 export default <App>*/
 
 function App(){
+    const [name, setName] = useState();
+    function randi(){
+        setName("Nithin");
+        //setName("oomb eni ella xD!")
+
+    }
     return(
-        <React.Fragment>
-            <Header title = "nick"></Header>
-            <Header title = "nick2"></Header>
-        </React.Fragment>
+        <>
+            <button onClick={randi}>Click to make change</button>
+            <h1>my name is {name}</h1>
+        </>
     )}
-        function Header({title}) {
-            return <div>
-                {title}
-            </div>
-        }
 export default App
