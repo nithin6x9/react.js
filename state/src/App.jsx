@@ -1,4 +1,4 @@
-import { useState,useEffect ,Fragment} from 'react'
+import { useState } from 'react'
 import './App.css'
 /*
 function App() {
@@ -17,17 +17,27 @@ function App() {
 export default <App>*/
 
 function App(){
-    const [name, setName] = useState();
-    function randi(){
-        setName(Math.random());
-        //setName("oomb eni ella xD!")
-
-    }
     return(
-        <>
-            <button onClick={randi}>Click to make change</button>
-            <h1>My name is {name}</h1>
+        <div>
+            <Headerwithbutton />
             <h2>Lol! i made it kudos</h2>
-        </>
+ 
+        </div>
     )}
+    function Headerwithbutton(){
+    const [firsttitle, setfirsttitle] = useState("My name is Nithin krishna");
+    function changetitle(){
+        setfirsttitle("My name is "+Math.random());
+        //setName("oomb eni ella xD!")
+    }
+    return<>
+        <button onClick={changetitle}>Click to change Name</button>
+        <Header title={firsttitle} />
+    </>
+    }
+    function Header({title}) {
+        return <div>
+           <br></br> {title}
+        </div>
+    }
 export default App
