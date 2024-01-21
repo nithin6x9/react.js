@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react'
+import { useState,useEffect ,Fragment} from 'react'
 import './App.css'
 /*
 function App() {
@@ -19,7 +19,7 @@ export default <App>*/
 function App(){
     const [name, setName] = useState();
     function randi(){
-        setName("Nithin");
+        setName(Math.random());
         //setName("oomb eni ella xD!")
 
     }
