@@ -1,15 +1,17 @@
-import {useState} from 'react';
+import { useState,useEffect } from 'react'
+import './App.css'
 
-function App(){
-    const [count,setCount] = useState(0);
-    return(
-        <div className = "tutorial">
-            <h1>count:{count}</h1>
-            <button onClick={()=>
-            setCount(count+1)}>increment</button>
-
-        </div>
-    );
+function App() {
+  const [count, setCount] = useState(0)
+    function add() {
+        setCount(count+1);
+    }
+  return (
+   <div className="counter">
+    <h1>Count:{count}</h1>
+    <button onClick={add}>Increment</button>
+   </div>
+  )
 }
 
-export default App();
+export default App
