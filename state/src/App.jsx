@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,memo } from 'react'
 import './App.css'
 /*
 function App() {
@@ -21,6 +21,7 @@ function App(){
         <div>
             <Headerwithbutton />
             <h2>Lol! i made it kudos</h2>
+            <h3>hehehehe</h3>
  
         </div>
     )}
@@ -40,4 +41,9 @@ function App(){
            <br></br> {title}
         </div>
     }
+    const Header = React.memo(function Header({title}){
+        return <div>
+            {title}
+        </div>
+    })
 export default App
