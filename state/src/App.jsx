@@ -1,7 +1,19 @@
 import React,{Fragment,useState} from 'react';
 
 function App(){
-    const [title,setTitle] = useState("Hola");
+    const [title,setTitle] = useState([{
+        id:1,
+        title:"go to gym",
+        description:"ok"
+    },{
+        id:1,
+        title:"go to gym",
+        description:"ok"
+    },{
+        id:1,
+        title:"go to gym",
+        description:"ok"
+    }]);
     return(
         <div>
 
