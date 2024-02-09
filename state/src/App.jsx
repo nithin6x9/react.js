@@ -15,11 +15,20 @@ function App(){
         description:"ok"
     }]);
     function addTodo(){
-        setTodos([...todos,{
+        /*setTodos([...todos,{
             id:4,
             title:Math.random(),
             description:Math.random()
-        }])
+        }])*/
+        const newtodos = [];
+        for(let i = 0;i<todos.length();i++){
+            newtodos.push(todos[i]);
+        newtodos.push({
+            id:4,
+            title:Math.random(),
+        })
+        setTodos(newtodos)
+        }
     }
     return(
         <div>
