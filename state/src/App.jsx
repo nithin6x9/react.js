@@ -1,15 +1,40 @@
-import React,{Fragment,useState,useEffect} from 'react';
+import { useEffect, useState } from "react"
 
-function App(){
+function App() {
+  const [id, setId] = useState(1);
 
-    useEffect(function(){
-        alert("Hi Bitch")
-    },[])
-
-    return <div>
-        heheh
+  return (  
+    <div>
+      <button onClick={() => {
+        setId(id +1);
+      }}>Next</button>
+      <Todo id={id} />
     </div>
+  )
 }
+
+function Todo({id}) {
+  const [todo, setTodo] = useState({});
+
+  useEffect(() => {
+    fetch("https://sum-server.100xdevs.com/todo?id=" + id)
+      .then(async (res) => {
+        const json = await res.json();
+        setTodo(json.todo);
+      })
+  }, [id])
+
+  return <div>
+    <h2>
+      {todo.title}
+    </h2>
+    <h5>
+      {todo.description}
+    </h5>
+  </div>
+}
+
+export default App
 /*Wrap
 function App(){
     return <>
@@ -36,4 +61,3 @@ function TextComponent(){
     </div>
 }
 */
-export default App
