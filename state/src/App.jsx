@@ -1,6 +1,24 @@
 import React,{Fragment,useState} from 'react';
 
-//const [count,setCount] = useState(4);
+function App(){
+    return <div>
+    <CardWrapper innerComponent = {<TextComponent />} />
+</div>
+}
+
+function CardWrapper(){
+    return <div style = {{border:"2px solid black"}}>
+        {innerComponent}
+    </div>
+}
+function TextComponent(){
+    return <div>
+        hi there
+    </div>
+}
+
+/*
+const [count,setCount] = useState(4);
 let counter = 4;
 function App(){
     const [todos,setTodos] = useState([{
@@ -22,7 +40,7 @@ function App(){
             title:Math.random(),
             description:'Random Number'
         }])
-        /*
+
         const newtodos = [];
         for(let i = 0;i<todos.length();i++){
             newtodos.push(todos[i]);
@@ -31,12 +49,12 @@ function App(){
             title:Math.random(),
         })
         setTodos(newtodos)
-        }*/
+        }
     }
     return(
         <div>
             <button onClick = {addTodo}>Add a TODO</button>
-            {todos.map(todo => <Todo title = {todo.title} description={todo.description} />)}
+            {todos.map(todo => <Todo key = {todo.id} title = {todo.title} description={todo.description} />)}
         </div>
     )
 }
@@ -54,3 +72,4 @@ function Todo({title,description}){
     )
 }
 export default App
+*/
