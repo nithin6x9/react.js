@@ -1,6 +1,16 @@
-import React,{Fragment,useState} from 'react';
+import React,{Fragment,useState,useEffect} from 'react';
 
-//Wrap
+function App(){
+
+    useEffect(function(){
+        alert("Hi Bitch")
+    },[])
+
+    return <div>
+        heheh
+    </div>
+}
+/*Wrap
 function App(){
     return <>
    <CardWrapper>
@@ -25,5 +35,5 @@ function TextComponent(){
         hi there
     </div>
 }
-
+*/
 export default App
