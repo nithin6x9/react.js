@@ -6,6 +6,11 @@ function App(){
    <CardWrapper>
     Hi there
    </CardWrapper>
+   <CardWrapper>
+    <CardWrapper>
+        <TextComponent />
+    </CardWrapper>
+   </CardWrapper>
 </>
 }
 
@@ -14,11 +19,11 @@ function CardWrapper({children}){
         {children}
     </div>
 }
-/*
+
 function TextComponent(){
     return <div>
         hi there
     </div>
-}*/
+}
 
 export default App
