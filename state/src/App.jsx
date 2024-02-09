@@ -1,25 +1,28 @@
 import React,{Fragment,useState} from 'react';
 
+//const [count,setCount] = useState(4);
+let counter = 4;
 function App(){
-    const [todos,seTodos] = useState([{
+    const [todos,setTodos] = useState([{
         id:1,
         title:"go to gym",
         description:"ok"
     },{
-        id:1,
-        title:"go to gym",
+        id:2,
+        title:"go to School",
         description:"ok"
     },{
-        id:1,
-        title:"go to gym",
+        id:3,
+        title:"go to Lab",
         description:"ok"
     }]);
     function addTodo(){
-        /*setTodos([...todos,{
-            id:4,
+        setTodos([...todos,{
+            id:counter++,
             title:Math.random(),
-            description:Math.random()
-        }])*/
+            description:'Random Number'
+        }])
+        /*
         const newtodos = [];
         for(let i = 0;i<todos.length();i++){
             newtodos.push(todos[i]);
@@ -28,7 +31,7 @@ function App(){
             title:Math.random(),
         })
         setTodos(newtodos)
-        }
+        }*/
     }
     return(
         <div>
@@ -41,9 +44,9 @@ function App(){
 function Todo({title,description}){
     return (
         <div>
-        <h1>
+        <h3>
             {title}
-        </h1>
+        </h3>
         <h5>
             {description}
         </h5>
