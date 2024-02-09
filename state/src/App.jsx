@@ -1,7 +1,7 @@
 import React,{Fragment,useState} from 'react';
 
 function App(){
-    const [title,setTitle] = useState([{
+    const [todos,seTodos] = useState([{
         id:1,
         title:"go to gym",
         description:"ok"
@@ -14,9 +14,17 @@ function App(){
         title:"go to gym",
         description:"ok"
     }]);
+    function addTodo(){
+        setTodos([...todos,{
+            id:4,
+            title:Math.random(),
+            description:Math.random()
+        }])
+    }
     return(
         <div>
-
+            <button onClick = {addTodo}>Add a TODO</button>
+            {todos.map(todo => <Todo title = {todo.title} description={todo.description} />)}
         </div>
     )
 }
