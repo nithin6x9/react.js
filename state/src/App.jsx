@@ -1,12 +1,16 @@
 import {useState,useEffect} from 'react'
 import axios from "axios";
+import './App.css'
 
 function App(){
+
+    const [todos,setTodos] = useState([]);
     useEffect(() => {
-        axios.get("https://sum-server.100xdevs.com/todos")
-        .then(function(response){
-            setTodos(response.data.todos)
-    })
+        fetch("https://sum-server.100xdevs.com/todos")
+        .then(async function(response){
+            const json = await response.json();
+            setTodos(json.todos)
+        })
 },[]);
 
     return(
@@ -19,10 +23,13 @@ function App(){
 
 function Todo({title,description}){
     return <div>
-        <h1>{title}
+        <h1>
+        {title}
         </h1>
+        <h4>
         {description}
+        </h4>
     </div>
 }
 
-export default App()
+export default App;
