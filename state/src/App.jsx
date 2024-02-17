@@ -1,34 +1,29 @@
 import {useState,useEffect} from 'react'
-import axios from "axios";
-import './App.css'
+
 
 function App(){
-
     const [todos,setTodos] = useState([]);
-    useEffect(() => {
-        axios.get("https://sum-server.100xdevs.com/todos")
+
+    useEffect(()=>{
+        axios.get("")
         .then(function(response){
             setTodos(response.data.todos)
         })
-},[]);
+    },[]);
+
 
     return(
         <>
-            {todos.map(todo => <Todo title={todo.title} description = {todo.description} />)}
+            {todos.map(todo => <Todo title = {todo.title} description={todo.description} />)}
         </>
     )
-
 }
 
 function Todo({title,description}){
     return <div>
-        <h1>
-        {title}
-        </h1>
-        <h4>
+        <h1>{title}</h1>
         {description}
-        </h4>
     </div>
 }
 
-export default App;
+export default App
