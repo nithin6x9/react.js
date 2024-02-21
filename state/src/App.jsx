@@ -1,26 +1,27 @@
-import {useState,memo} from 'react'
+import {useState} from 'react'
 
 function App(){
-        const [count,setCount] = useState(0);
+    const [exchangeData,setExchangeData] = useState({});
+    const [bankData,setBankData] = useState({})
+    console.log("Re-render");
 
-        function onClick(){
-            console.log("Clicked");
-        }
+    fetch("https://google.com",async (res) =>{
+        const json = await res.json();
+        setBankData({income:100});
+    });
+    setTimeout(()=>{
+        setExchangeData({
+            returns:100
+        });
+    },1000);
 
-        return <div>
-            <Child onClick={onClick} />
-            <button onClick={() => {
-                setCount(count+1);
-            }}>Click me</button>
+    const incomeTax = (bankData.income + exchangeData) * 0.3;
+
+    return(
+        <div>
+            Hi there,Your income tax returns are {incomeTax}
         </div>
+    )
 }
-
-const Child = memo(({onClick}) => {
-    console.log("Child render")
-
-    return <div>
-        <button onClick = {onClick}>Button Clicked</button>
-    </div>
-})
 
 export default App;
