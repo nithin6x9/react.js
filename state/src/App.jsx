@@ -5,7 +5,7 @@ function App(){
     const [todos,setTodos] = useState([]);
 
     useEffect(()=>{
-        axios.get("")
+        axios.get("https://sum-server.100xdevs.com/todo?id=1")
         .then(function(response){
             setTodos(response.data.todos)
         })
