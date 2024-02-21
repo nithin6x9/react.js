@@ -18,9 +18,7 @@ function App(){
     return (
     <div>
     <input type = "text" value = {inputValue} onChange ={(e) => setInputValue(e.target.value)} /><br /><br />
-    <button onClick={() => setInputValue(parseInt(inputValue))}>
-      Click to sum the value from 1 to {inputValue}
-    </button>
+
     <p>Sum: {sum}</p>
     </div>
     )
