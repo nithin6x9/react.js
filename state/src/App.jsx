@@ -3,45 +3,27 @@ import axios from 'axios'
 
 
 function App(){
-    const [selectedId,setSelectedId] = useState(1);
-
-    return  <div>
-          <button onClick = {function(){
-            setSelectedId(1);
-          }}>1</button>
-          <button onClick = {function(){
-            setSelectedId(2);
-          }}>2</button>
-          <button onClick = {function(){
-            setSelectedId(3);
-          }}>3</button>
-          <button onClick = {function(){
-            setSelectedId(4);
-          }}>4</button>
-
-            <Todo id = {selectedId} />
-        </div>
-
-}
-
-function Todo({id}){
-    const[todo,setTodo] = useState({});
+    const [inputValue,setInputValue]  = useState(0);
+    const [sum,setSum] = useState(0);
 
     useEffect(()=>{
-        axios.get(`https://sum-server.100xdevs.com/todo?id=${id}`)
-        .then(response =>{
-            setTodo(response.data.todo)
-        })
-    },[id])
-    return <div>
-    Id:{id}
-    <h1>
-        {todo.title}
-    </h1>
-    <h4>
-        {todo.description}
-    </h4>
+        if(inputValue>0){
+            let sum = 0;
+            for(let i = 1;i<=inputValue;i++){
+                sum+=i;
+            }
+            setSum(sum)
+        } 
+    },[inputValue])
+    return (
+    <div>
+    <input type = "text" value = {inputValue} onChange ={(e) => setInputValue(e.target.value)} /><br /><br />
+    <button onClick={() => setInputValue(parseInt(inputValue))}>
+      Click to sum the value from 1 to {inputValue}
+    </button>
+    <p>Sum: {sum}</p>
     </div>
+    )
 }
 
 export default App;
