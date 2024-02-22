@@ -1,10 +1,11 @@
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import {BrowserRouter,Routes,Route,useNavigate} from 'react-router-dom'
 import {Dashboard} from './components/Dashboard'
 import {Landing} from './components/Landing'
 
 //Routing incoming
 
 function App(){
+    const navigate = useNavigate();
    //const router = [{
      //   route:"/",
        // componenet:Dashboard
@@ -13,10 +14,10 @@ function App(){
         <div>
             <div>
                 <button onClick ={()=>{
-                    window.location.href="/dashboard"
+                    navigate("/dashboard");
                 }} >Dashboard</button>
                 <button onClick = {()=>{
-                    window.location.href = "/landing"
+                    navigate("/landing");
                 }}>Landing page</button>
 
             </div>
