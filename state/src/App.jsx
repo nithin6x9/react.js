@@ -1,35 +1,15 @@
-import {useState} from 'react'
+import {BrowserRouter,Routes} from 'react-router-dom'
 
 //Routing incoming
 
 function App(){
-    const [exchangeData,setExchangeData] = useState({});
-    const [bankData,setBankData] = useState({})
-    console.log("Re-render");
-
-
-    useEffect(function(){
-    fetch("https://google.com",async (res) =>{
-        const json = await res.json();
-        setBankData({income:100});
-    });
-    },[])
-    useEffect(function(){
-    setTimeout(()=>{
-        setExchangeData({
-            returns:100
-        });
-    },1000);
-    }
-    ,[])
-
-    const incomeTax = (bankData.income + exchangeData) * 0.3;
-
     return(
-        <div>
-            Hi there,Your income tax returns are {incomeTax}
-        </div>
+        <BrowserRouter>
+        <Routes>
+        <Route path = "/dashboard" element = {<Dashboard />} />
+        </Routes>
+
+        </BrowserRouter>
     )
 }
-
 export default App;
