@@ -5,23 +5,14 @@ import {Landing} from './components/Landing'
 //Routing incoming
 
 function App(){
-    const navigate = useNavigate();
-   //const router = [{
-     //   route:"/",
-       // componenet:Dashboard
-    //}]
-    return(
-        <div>
+    //const router = [{
+        //   route:"/",
+        // componenet:Dashboard
+        //}]
+        return(
             <div>
-                <button onClick ={()=>{
-                    navigate("/dashboard");
-                }} >Dashboard</button>
-                <button onClick = {()=>{
-                    navigate("/landing");
-                }}>Landing page</button>
-
-            </div>
         <BrowserRouter>
+        <Appbar />
         <Routes>
             <Route path = "/dashboard" element = {<Dashboard />} />
             <Route path = "/landing" element = {<Landing />} />
@@ -30,5 +21,20 @@ function App(){
         </BrowserRouter>
         </div>
     )
+}
+function Appbar(){
+    
+    const navigate = useNavigate();
+            return <div>
+            <div>
+                <button onClick ={()=>{
+                    navigate("/dashboard");
+                }} >Dashboard</button>
+                <button onClick = {()=>{
+                    navigate("/landing");
+                }}>Landing page</button>
+                </div>
+            </div>
+
 }
 export default App;
