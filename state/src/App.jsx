@@ -1,24 +1,20 @@
+import {Suspence,lazy} from 'react'
 import {BrowserRouter,Routes,Route,useNavigate} from 'react-router-dom'
-import {Dashboard} from './components/Dashboard'
-import {Landing} from './components/Landing'
+const Dashboard =lazy(() => import('./components/Dashboard'))
+const Landing = lazy(() => import('./components/Landing'))
 
 //Routing incoming
 
 function App(){
-    //const router = [{
-        //   route:"/",
-        // componenet:Dashboard
-        //}]
         return(
-            <div>
-        <BrowserRouter>
-        <Appbar />
-        <Routes>
-            <Route path = "/dashboard" element = {<Dashboard />} />
-            <Route path = "/landing" element = {<Landing />} />
-        </Routes>
-
-        </BrowserRouter>
+        <div>
+            <BrowserRouter>
+                <Appbar />
+                <Routes>
+                    <Route path = "/dashboard" element = {<Suspence fallback={"loading..."}><Dashboard /> </Suspence>} />
+                    <Route path = "/landing" element = {<Suspence fallback={"loading..."}><Landing /> </Suspence>} />
+                </Routes>
+            </BrowserRouter>
         </div>
     )
 }
@@ -38,3 +34,5 @@ function Appbar(){
 
 }
 export default App;
+
+//Lazy Loading
