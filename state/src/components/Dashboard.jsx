@@ -1,4 +1,4 @@
-export function Landing(){
+export function Dashboard(){
     return <div>
         Dashboard Page
     </div>
