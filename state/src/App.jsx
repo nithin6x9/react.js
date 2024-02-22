@@ -11,9 +11,13 @@ function App(){
     //}]
     return(
         <div>
-            <div style = {{background:"black"}}>
-
-                Topbar pari
+            <div>
+                <button onClick ={()=>{
+                    window.location.href="/dashboard"
+                }} >Dashboard</button>
+                <button onClick = {()=>{
+                    window.location.href = "/landing"
+                }}>Landing page</button>
 
             </div>
         <BrowserRouter>
