@@ -5,15 +5,21 @@ function App(){
     const [bankData,setBankData] = useState({})
     console.log("Re-render");
 
+
+    useEffect(function(){
     fetch("https://google.com",async (res) =>{
         const json = await res.json();
         setBankData({income:100});
     });
+    },[])
+    useEffect(function(){
     setTimeout(()=>{
         setExchangeData({
             returns:100
         });
     },1000);
+    }
+    ,[])
 
     const incomeTax = (bankData.income + exchangeData) * 0.3;
 
