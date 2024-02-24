@@ -1,51 +1,58 @@
+import { useContext, useMemo, useState } from "react"
+import { CountContext } from "./context";
+import { RecoilRoot, useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { countAtom, evenSelector } from "./store/atoms/count";
 
-import {useState} from 'react';
-import {CountContext} from './context';
-
-//Context API
-//Reducer,useReducer 
-
-//Recoil
-function App(){
-
-    const [count,setCount] = useState(0);
-    return (
+function App() {
+  return (
     <div>
-    <CountContext.Provider value = {count}>
-
-        <Count  count = {count}/>
-        <Buttons count = {count} setCount={setCount}/>
-    </CountContext.Provider>
+      <RecoilRoot>
+        <Count />
+      </RecoilRoot>
     </div>
-    )
+  )
 }
 
-function Count({count}){
-    return <div>
-        {count}
-    </div>
-
+function Count() {
+  console.log("re-render");
+  return <div>
+    <CountRenderer />
+    <Buttons />
+  </div>
 }
 
-function CountRenderer(){
-    const count = useContext(CountContext);
-    return <div>
-        {count}
-    </div>
+function CountRenderer() {
+  const count = useRecoilValue(countAtom);
+  
+  return <div>
+    <b>
+      {count}
+    </b>
+    <EvenCountRenderer />
+  </div>
 }
 
-function Buttons({count,setCount}){
-    return <div>
-        <button onClick = {()=>{
-            setCount(count+1)
-        }}
-        >Increase</button>
-        <button onClick={()=>{
-            setCount(count-1)
+function EvenCountRenderer() {
+  const isEven = useRecoilValue(evenSelector);
 
-        }}>Decrease</button>
-    </div>
-
+  return <div>
+    {isEven ? "It is even" : null}
+  </div>
 }
 
-export default App;
+function Buttons() {
+  const setCount = useSetRecoilState(countAtom);
+  console.log("buttons re-rendererd");
+
+  return <div>
+    <button onClick={() => {
+      setCount(count => count + 1)
+    }}>Increase</button>
+
+    <button onClick={() => {
+      setCount(count => count - 1)
+    }}>Decrease</button>
+  </div>
+}
+
+export default App
