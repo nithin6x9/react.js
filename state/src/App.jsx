@@ -3,6 +3,9 @@ import {useState} from 'react';
 import {CountContext} from './context';
 
 //Context API
+//Reducer,useReducer 
+
+//Recoil
 function App(){
 
     const [count,setCount] = useState(0);
