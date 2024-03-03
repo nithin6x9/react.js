@@ -1,6 +1,6 @@
 import {useContext} from 'react'
 import {CountContext} from "./context"
-import {RecoilRoot,useRecoilState,useRecoilValue} from "recoil";
+import {RecoilRoot,useRecoilState,useRecoilValue,useSetRecoilState} from "recoil";
 import { countAtom } from './store/atoms/count';
 
 function App(){
@@ -8,19 +8,25 @@ function App(){
     return (
         <div>
         <RecoilRoot>     
-            <count />
+            <Count />
         </RecoilRoot>
+        <Even />
         </div>
     )
 }
 
 function Count(){
+    console.log("Count Re-render")
     return <div>
         <CountRenderer />
         <Buttons />
     </div>
 
 }
+//function Input(){
+//    const [inputValue,setInputValue] = useState("")
+
+//}
 function CountRenderer(){
     const count = useRecoilValue(countAtom);
     return <div>
@@ -30,15 +36,16 @@ function CountRenderer(){
     </div>
 }
 function Buttons() {
-    const [count,setCount] = useRecoilState(countAtom);
-    
+    const setCount = useSetRecoilState(countAtom);
+    console.log("Re-render")
     return <div>
         <button onClick = {()=>{
-            setCount(count+=1)
+            setCount(count => count+1)
         }}>Increase</button>
         <button onClick = {()=>{
-            setCount(count-=1)
+            setCount(count => count-1)
         }}>Decrease</button>
     </div>
 }
-export default App()
+
+export default App
