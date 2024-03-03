@@ -6,10 +6,10 @@ export const countAtom = atom({
     default:  0
 });
 
-export const evenSelctor = selector({
+export const evenSelector = selector({
     key: "evenSelctor",
-    get: ({props})=>{
-        const count = props.get(countAtom);
+    get: ({get})=>{
+        const count = get(countAtom);
         return count %2;
     }
-})
+});
