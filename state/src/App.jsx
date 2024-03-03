@@ -1,4 +1,4 @@
-import {useContext,useState} from 'react'
+import {useContext} from 'react'
 import {CountContext} from "./context"
 
 function App(){
@@ -12,16 +12,22 @@ function App(){
     )
 }
 
-function Count({setCount}){
+function Count(){
+    return <div>
+        <CountRenderer />
+        <Buttons />
+    </div>
+
+}
+function CountRenderer(){
     const count = 0;
     return <div>
         <b>
             {count}
         </b>
     </div>
-
 }
-function countRenderer() {
+function Buttons() {
     const count = 0;
     return <div>
         <button onClick = {()=>{
