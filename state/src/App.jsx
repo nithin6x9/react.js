@@ -2,23 +2,34 @@ import {useContext,useState} from 'react'
 import {CountContext} from "./context"
 
 function App(){
-    const [count,setCount] = useState();
+
 
 
     return (
         <>
-        <CountContext.Provider value = {count}>
-            <count setCount = {setCount} />
-        </CountContext.Provider>
+            <count />
         </>
     )
 }
 
 function Count({setCount}){
-    
+    const count = 0;
     return <div>
-        <CountRenderer />
-        <Buttons  setCount = {setCount} />
+        <b>
+            {count}
+        </b>
     </div>
 
 }
+function countRenderer() {
+    const count = 0;
+    return <div>
+        <button onClick = {()=>{
+            setCount(count+=1)
+        }}>Increase</button>
+        <button onClick = {()=>{
+            setCount(count-=1)
+        }}>Decrease</button>
+    </div>
+}
+export default App()
