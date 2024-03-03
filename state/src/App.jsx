@@ -10,7 +10,6 @@ function App(){
         <RecoilRoot>     
             <Count />
         </RecoilRoot>
-        <Even />
         </div>
     )
 }
@@ -33,8 +32,20 @@ function CountRenderer(){
         <b>
             {count}
         </b>
+        <EvenCountRenderer />
     </div>
 }
+function EvenCountRenderer(){
+    const count = useRecoilValue(countAtom)
+    //if (count % 2==0){
+      //  return <div>
+        //    It is even
+       // </div>
+     return <div>
+        {(count % 2 == 0)?"It is Even" : null}
+     </div>
+    }
+
 function Buttons() {
     const setCount = useSetRecoilState(countAtom);
     console.log("Re-render")
@@ -47,5 +58,11 @@ function Buttons() {
         }}>Decrease</button>
     </div>
 }
+/*
+function Even({count}){
+    if({count}%2==0){
+
+    }
+}*/
 
 export default App
