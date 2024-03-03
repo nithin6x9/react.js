@@ -3,7 +3,11 @@ import { selector,atom } from 'recoil';
 
 export const countAtom = atom({
     key: "countAtom",
-    default:  0
+    default:  ""
+});
+export const countTodo = atom({
+    key: "countTodo",
+    default: ""
 });
 
 export const evenSelector = selector({

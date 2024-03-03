@@ -1,65 +1,26 @@
+import {react} from "react";
 import {useContext} from 'react'
 import {CountContext} from "./context"
 import {RecoilRoot,useRecoilState,useRecoilValue,useSetRecoilState} from "recoil";
-import { countAtom } from './store/atoms/count';
+import { countAtom,countTodo } from './store/atoms/count';
 import {evenSelector} from './store/atoms/count';
 
 function App(){
+    return(<RecoilRoot>
+        <Todo />
+    </RecoilRoot>
+    );
+}
+function Todo(){
+    const [todo,setTodo] = useRecoilState(countAtom)
+    const [tododescription,setTodoDescription] = useRecoilState(countTodo)
 
-    return (
-        <div>
-        <RecoilRoot>     
-            <Count />
-        </RecoilRoot>
+        return <div>
+            <input type="text" placeholder="Enter your todo" value ={todo} onChange = {(e)=>setTodo(e.target.value)} /><br></br>
+            <input type="text" placeholder="To-Do Desctription if you have:)" value ={tododescription} onChange = {(e)=>setTodoDescription(e.target.value)} /><br></br>
+            <button>Click to update your To-Do</button>
         </div>
-    )
-}
+} 
 
-function Count(){
-    console.log("Count Re-render")
-    return <div>
-        <CountRenderer />
-        <Buttons />
-    </div>
-
-}
-//function Input(){
-//    const [inputValue,setInputValue] = useState("")
-
-//}
-function CountRenderer(){
-    const count = useRecoilValue(countAtom);
-    return <div>
-        <b>
-            {count}
-        </b>
-        <EvenCountRenderer />
-    </div>
-}
-function EvenCountRenderer(){
-    const isEven = useRecoilValue(evenSelector);
-     return <div>
-        {isEven ? "It is Even" : null}
-     </div>
-    }
-
-function Buttons() {
-    const setCount = useSetRecoilState(countAtom);
-    console.log("Re-render")
-    return <div>
-        <button onClick = {()=>{
-            setCount(count => count+1)
-        }}>Increase</button>
-        <button onClick = {()=>{
-            setCount(count => count-1)
-        }}>Decrease</button>
-    </div>
-}
-/*
-function Even({count}){
-    if({count}%2==0){
-
-    }
-}*/
 
 export default App
