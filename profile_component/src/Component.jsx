@@ -1,11 +1,13 @@
+import myimage from './assets/profile1.png'
+
 function Card(){
     return(
         <div className="card">
-            <img></img>
-            <h2>Rita Correia</h2>
+            <img src={myimage} />
+            <h2>Rita Correia 32</h2>
         </div>
     )
 
 }
 
-export default card;
+export default Card;
