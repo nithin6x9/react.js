@@ -13,7 +13,12 @@ function App(){
 }
 function Todo(){
     const [todo,setTodo] = useRecoilState(countAtom)
-    const [tododescription,setTodoDescription] = useRecoilState(countTodo)
+  //  const [tododescription,setTodoDescription] = useRecoilState(countTodo)
+
+    const onChange =({target:{value}}) => {
+        setTodo(value)
+
+    }
 
         return <div>
             <input type="text" placeholder="Enter your todo" value ={todo} onChange = {(e)=>setTodo(e.target.value)} /><br></br>
