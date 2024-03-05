@@ -1,42 +1,37 @@
-
 import React from 'react';
-import {RecoilRoot,selector,useRecoilValue,useRecoilState} from 'recoil';
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 
 function App() {
-    return(
-        <>
-            <Change />
-        </>
-    )
+    const [backgroundColor, setBackgroundColor] = useState('white');
 
-}
-function Change(){
-    const [colour,setColour] = useState("white")
-    return <div className="Change-butt">
-        <button className="Red-button" onClick={()=>{
-            setCount("red")
+  return (
+    <div style={{ backgroundColor: backgroundColor }}>
+      <div className="Change-butt">
+        <button className="Red-button" onClick={() => {
+          setBackgroundColor("red");
         }}>RED</button>
-        <button className="Yellow-button" onClick={()=>{
-            setCount("red")
+        <button className="Yellow-button" onClick={() => {
+          setBackgroundColor("yellow");
         }}>YELLOW</button>
-        <button className="Black-button" onClick={()=>{
-            setCount("red")
+        <button className="Black-button" onClick={() => {
+          setBackgroundColor("black");
         }}>BLACK</button>
-        <button className="Purple-button" onClick={()=>{
-            setCount("red")
+        <button className="Purple-button" onClick={() => {
+          setBackgroundColor("purple");
         }}>PURPLE</button>
-        <button className="Green-button" onClick={()=>{
-            setCount("red")
+        <button className="Green-button" onClick={() => {
+          setBackgroundColor("green");
         }}>GREEN</button>
-        <button className="Blue-button" onClick={()=>{
-            setCount("red")
+        <button className="Blue-button" onClick={() => {
+          setBackgroundColor("blue");
         }}>BLUE</button>
-        <button className="Default-button" onClick={()=>{
-            setCount("red")
+        <button className="Default-button" onClick={() => {
+          setBackgroundColor("white");
         }}>Default</button>
-
+      </div>
     </div>
+  );
 }
 
-export default App
+export default App;
