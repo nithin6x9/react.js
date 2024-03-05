@@ -1,0 +1,23 @@
+ 
+            <div className ="followers-count">80K</div>
+            <div className ="followers">Followers</div>
+            <div className = "likes-count">803K</div>
+            
+
+css
+.card .followers-count{
+    display:flex;
+    justify-content:left;
+    margin-left:15px;
+    margin-bottom:10px;
+    margin-top:15px;
+}
+.card .followers{
+    display:flex;
+    justify-content:left;
+}
+.card .likes-count{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+}
