@@ -7,24 +7,38 @@ function Card(){
         <div className="card">
             <img className ="card-image" src={myimage} />
                <div className="card-subdiv">
-                <strong>Apple  </strong>32
+                <strong>Steeve Jobs </strong>69
                 </div>
-                <p className="card-para">Steeve jobs</p> <br />
+                <p className="card-para">Apple Inc.</p> <br />
             <div className="line"></div>
-            <div className="details">
-                <div>
-                    <p>80K</p>
-                    <p>803K</p>
-                    <p>1.4K</p>
-                </div>
-            </div>
-            <div className="count">
-                <div>
-                    <p>Followers</p>
-                    <p>Likes</p>
-                    <p>Photos</p>
-                </div>
-            </div>
+         
+            <div class="stat-section">
+      <div class="stats">
+        <span class="amount">
+          80K
+        </span>
+        <span class="amount-name">
+          Followers
+        </span>
+      </div>
+      <div class="stats">
+        <span class="amount">
+          803K
+        </span>
+        <span class="amount-name">
+          Likes
+        </span>
+      </div>
+      <div class="stats">
+        <span class="amount">
+          1.4K
+        </span>
+        <span class="amount-name">
+          Photos
+        </span>
+      </div>
+    </div>
+ 
         </div>
     )
 

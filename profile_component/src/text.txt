@@ -20,4 +20,31 @@ css
     display:flex;
     justify-content:center;
     align-items:flex-start;
+
+}
+
+
+
+.card .details{
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    
+}
+
+.card .details > div{
+    display:flex;
+    flex-direction:row;
+    margin-top:10px;
+}
+.card .details > div >p{
+    margin-right:150px;
+    margin-left:5px;
+}
+.card .card-follower{
+    display:flex;
+    flex-direction:row;
+}
+.card .card-follower > div{
+    margin:10px;
 }
