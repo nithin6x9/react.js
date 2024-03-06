@@ -1,17 +1,24 @@
 import React from 'react';
-import { useState } from 'react';
+import {RecoilRoot,useRecoilState} from 'recoil';
+import {color} from './store/atom/count.jsx';
 import './App.css';
 
 function App() {
-    const [backgroundColor, setBackgroundColor] = useState('white');
-    const ChangeBackground=()=>{
-        setBackgroundColor('red');
-    }
-  return (
+  return (<RecoilRoot>
+
+    <ColourButtons />
+  </RecoilRoot>
+  )
+}
+function ColourButtons(){
+    const[backgroundColor,setBackgroundColor] = useRecoilState(color);
+    return (
     <div style={{ backgroundColor: backgroundColor,minHeight: '100vh' }}>
     
       <div className="Change-butt">
-        <button className="Red-button" onClick={ChangeBackground}>RED</button>
+        <button className="Red-button" onClick={()=>{
+            setBackgroundColor("red");
+        }}>RED</button>
         <button className="Yellow-button" onClick={() => {
           setBackgroundColor("yellow");
         }}>YELLOW</button>
@@ -32,7 +39,6 @@ function App() {
         }}>Default</button>
       </div>
     </div>
-  );
-}
+)};
 
 export default App;
