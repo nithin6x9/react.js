@@ -4,13 +4,14 @@ import './App.css';
 
 function App() {
     const [backgroundColor, setBackgroundColor] = useState('white');
-
+    const ChangeBackground=()=>{
+        setBackgroundColor('red');
+    }
   return (
-    <div style={{ backgroundColor: backgroundColor }}>
+    <div style={{ backgroundColor: backgroundColor,minHeight: '100vh' }}>
+    
       <div className="Change-butt">
-        <button className="Red-button" onClick={() => {
-          setBackgroundColor("red");
-        }}>RED</button>
+        <button className="Red-button" onClick={ChangeBackground}>RED</button>
         <button className="Yellow-button" onClick={() => {
           setBackgroundColor("yellow");
         }}>YELLOW</button>
