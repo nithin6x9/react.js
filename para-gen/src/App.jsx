@@ -1,27 +1,31 @@
-import React from 'react';
-import {RecoilRoot,useRecoilState,useRecoilValue} from 'recoil';
-import {wordsCount} from './store/atom/count.jsx'
+import {useState} from 'react';
+//import {RecoilRoot,useRecoilState,useRecoilValue} from 'recoil';
+//import {wordsCount} from './store/atom/count.jsx'
 import './App.css'
 
 function App() {
 
-    return (<RecoilRoot>
+    return <div>
 
         <Para />
-    </RecoilRoot>)
+    </div>
+
 }
 function Para(){
-    const [count,setCount] = useRecoilState(wordsCount)
+    const [count,setCount] = useState()
+    const [storeValue,setStoreValue] = useState()
     const handleInputChange = (event)=>{
         setCount(event.target.value);
     };
     const handleButtonClick = ()=>{
+        setStoreValue(count);
         console.log('input value: ${count}')
     }
     return <div className="para-gen">
         <p className="para">Para Generator</p>
-        <input className="input"  value={count} onChange={handleButtonClick} placeholder="Ente number of words"></input>
-        <button className="button">Generate</button>
+        <input className="input" type="text" value={count} onChange={handleInputChange} placeholder="Ente number of words" />
+        <button className="button" onClick={handleButtonClick}>Generate</button>
+        <div>{storeValue}</div>
     </div>
 
 }
