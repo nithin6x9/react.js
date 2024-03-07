@@ -4,6 +4,7 @@ body{
     background-repeat:no-repeat;
     align-items:center;
 
+
 }
 .TopDiv{
     position:absolute;
@@ -14,12 +15,19 @@ body{
     width:550px;
     height:200px;
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
-    background-color:aquamarine;
+    background-color:rgb(12, 240, 252);
     border-radius:2.5mm;
-    padding:20px;
-
+   
+}
+.TopDiv .subDiv{
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+    margin-bottom:10%;
 }
 .TopDiv .Name{
     display:flex;
@@ -28,10 +36,11 @@ body{
     font-size:2rem;
     font-weight:bold;
     margin-top:8%;
+    color:whitesmoke;
+  
 }
 .TopDiv .Input-box{
-    display:flex;
-    justify-content:center;
+
     background-color:#f2f2f2;
     border:none;
     border-radius:5px;
@@ -39,10 +48,21 @@ body{
     font-size:16px;
     box-sizing: border-box;
     color: #333;
-    height:10px;
-    margin-top:20px;
+    height:25px;
+    cursor:auto;
+
     &:focus {
         outline: none;
         box-shadow: 0 0 3px 0 rgba(0, 122, 255, 0.5);
       }
+}
+.Button{
+    background-color:blue;
+    color:white;
+    padding: 7px 15px;
+    border:none;
+    border-radius: 5px;
+    cursor:pointer;
+
+
 }
