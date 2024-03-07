@@ -15,9 +15,10 @@ body{
     height:200px;
     display:flex;
     justify-content:center;
-    align-items:top;
+    align-items:center;
     background-color:aquamarine;
     border-radius:2.5mm;
+    padding:20px;
 
 }
 .TopDiv .Name{
@@ -31,5 +32,17 @@ body{
 .TopDiv .Input-box{
     display:flex;
     justify-content:center;
-    
+    background-color:#f2f2f2;
+    border:none;
+    border-radius:5px;
+    padding:10px;
+    font-size:16px;
+    box-sizing: border-box;
+    color: #333;
+    height:10px;
+    margin-top:20px;
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 3px 0 rgba(0, 122, 255, 0.5);
+      }
 }

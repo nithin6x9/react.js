@@ -8,8 +8,11 @@ function App() {
 function BirthdayCard(){
     return(
     <div className = "TopDiv">
-        <p className="Name">Enter Your Name!</p>
-        <input className="Input-box" type = "text" placeholder="Enter your Name!" />
+        <p className="Name">Enter Your Name!</p><br/><br />
+        <div>
+
+        <input className="Input-box" type = "text" placeholder="Enter your Name!"  />
+        </div>
     </div>
     )
 }
