@@ -1,11 +1,9 @@
 import {useState} from 'react';
-import ReactDom from 'react'
-import {createBrowserRouter,RouterProvider} from "react-router-dom"
 
 import './App.css'
 
 
-function App() {
+export default function App() {
   return <div>
     <BirthdayCard />
   </div>
@@ -31,4 +29,3 @@ function BirthdayCard(){
     </div>
     )
 }
-export default App

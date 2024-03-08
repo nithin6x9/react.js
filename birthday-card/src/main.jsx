@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom'
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import App from './App.jsx'
 import './App.css'
@@ -19,6 +19,6 @@ ReactDOM.render(
     <App />
     <RouterProvider router = {router} />
   </React.StrictMode>,
-  document.getELementById('root')
+  document.getElementById('root')
 
 );
