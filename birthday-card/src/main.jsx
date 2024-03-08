@@ -3,20 +3,22 @@ import ReactDOM from 'react-dom'
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import App from './App.jsx'
 import './App.css'
-import Root from './root/root.jsx'
+import Random1 from './root/root1.jsx'
 import ErrorPage from './error-page.jsx'
 
 const router = createBrowserRouter([
     {
         path:"/",
-        element:<Root />,
+        element:<App />,
         errorElement:<ErrorPage />
-    },
+    },{
+        path:"/wish-card",
+        element:<Random1 />
+    }
 ]);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
     <RouterProvider router = {router} />
   </React.StrictMode>,
   document.getElementById('root')
