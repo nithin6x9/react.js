@@ -1,16 +1,15 @@
-import './App.css'
 
 export default function App(){
     return(
-        <>
-            <div style={{display:'flex',justifyContent:'center'}}>
-                <div>Button</div>
-                <div>Button</div>
-                <div>Button</div>
-                <div>Button</div>
-                <div>Button</div>
-                <div>Button</div>
-            </div>
-        </>
+      <div className='grid grid-cols-6'>
+           <div className='bg-red-500'>Nithin</div>
+           <div>Nithin</div>
+           <div>Nithin</div>
+           <div>Nithin</div>
+           <div>Nithin</div>
+           <div>Nithin</div>
+
+
+      </div>
     )
-}
+  }
