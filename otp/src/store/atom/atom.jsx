@@ -1,6 +1,6 @@
 import {atom} from 'recoil';
 
-export const Otp = atom({
-    key:'otp',
+export const otpState = atom({
+    key:'otpState',
     defualt:''
 });
