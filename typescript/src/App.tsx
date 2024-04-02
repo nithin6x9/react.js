@@ -1,24 +1,25 @@
 import { useEffect, useState } from 'react';
 
-function useIsOnline(){
-    const [isOnline,setIsOnline] = useState(window.navigator.onLine);
-
+function useMousePointer(){
+    const [pointer,setPointer] = useState({x:0,y:0});
+    
+    const handleMouseMove = (e) => {
+        setPointer({x:e.clientX,y:e.clientY});
+    }
     useEffect(()=>{
-        window.addEventListener("online",()=>{
-            setIsOnline(true);
-        })
-        window.addEventListener("offline",()=>{
-            setIsOnline(false);
-        })
+        window.addEventListener('mousemove',handleMouseMove);
+        return ()=>{
+            window.removeEventListener("mousemove",handleMouseMove);
+        };
     },[])
-    return isOnline
-}
+    return pointer
+};
 
 function App() {
-    const isOnline = useIsOnline(5);
+    const mousepointer = useMousePointer();
     return (
         <>
-            {isOnline?"You are online":"You're offline"}
+            Pointer is at {mousepointer.x} {mousepointer.y}
         </>
     )
 }
