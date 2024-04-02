@@ -1,28 +1,21 @@
 import { useEffect, useState } from 'react';
-
-function useMousePointer(){
-    const [pointer,setPointer] = useState({x:0,y:0});
+//useDimenesion hook to find the height and width of the browser 
+function useInterval(){
+    const [count, setCount] = useState(0);
     
-    const handleMouseMove = (e) => {
-        setPointer({x:e.clientX,y:e.clientY});
-    }
-    useEffect(()=>{
-        window.addEventListener('mousemove',handleMouseMove);
-        return ()=>{
-            window.removeEventListener("mousemove",handleMouseMove);
-        };
-    },[])
-    return pointer
-};
+    useInterval(() => {
+      setCount(c => c + 1);
+    }, 1000)
 
-function App() {
-    const mousepointer = useMousePointer();
-    return (
-        <>
-            Pointer is at {mousepointer.x} {mousepointer.y}
-        </>
-    )
 }
 
-
-export default App
+function App() {
+  
+    return (
+      <>
+        Timer is at {count}
+      </>
+    )
+  }
+  
+  export default App
