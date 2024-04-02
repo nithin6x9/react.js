@@ -1,41 +1,33 @@
-import React, { useState, useEffect } from 'react';
-// Remove the following line if you're not using it
-// import { escapeComponent } from '../node_modules/uri-js/dist/esnext/uri';
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
-function App() {
-  const [render, setRender] = useState(true);
-  
-  useEffect(() => {
-    setTimeout(() => {
-      setRender(false);
-    }, 1000); // Comma was missing here
-  }, []);
-  
-  if (!render) {
-    return (
-      <div>
-        {render ? <MyComponent /> : <div></div>}
-      </div>
-    );
-  }
-
-  function MyComponent() {
+function useTodos() {
+    const [todos, setTodos] = useState([])
+    
     useEffect(() => {
-      console.error("Component mounted");
-      return () => {
-        console.log("Component Unmounted");
-      };
-    }, []);
-
-    return (
-      <div>
-        from inside my escapeComponent
-      </div>
-    );
-  }
-
-  // Make sure you return something if render is true
-  return <div>Loading...</div>;
+      axios.get("https://sum-server.100xdevs.com/todos")
+        .then(res => {
+          setTodos(res.data.todos);
+        })
+    }, [])
+    return todos;
 }
 
-export default App;
+function App() {
+    const todos = useTodos();
+  return (
+    <>
+      {todos.map(todo => <Track todo={todo} />)}
+    </>
+  )
+}
+
+function Track({ todo }) {
+  return <div>
+    {todo.title}
+    <br />
+    {todo.description}
+  </div>
+}
+
+export default App
