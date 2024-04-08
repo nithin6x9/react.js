@@ -1,3 +1,10 @@
 "use strict";
-const x = 1; //like int in C
-console.log(x);
+function islegal(age) {
+    if (age >= 18) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+islegal(19);
