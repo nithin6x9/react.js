@@ -33,12 +33,17 @@ isLegal({
 */
 
 enum Direction{
-    Up,
+    Up=9999999,
     Down,
     Left,
     Right
 }
+function doSomething(keyPressed:Direction){
+    if(keyPressed == Direction.Up){
 
+    }
+}
 
-doSomethin(Direction.Right);
-function DoSomething()
+doSomething(Direction.Right);
+
+console.log(Direction.Up);
