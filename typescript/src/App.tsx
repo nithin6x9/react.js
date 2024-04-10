@@ -1,23 +1,35 @@
-import { useEffect, useState } from 'react';
-//useDimenesion hook to find the height and width of the browser 
-function useInterval(fn,timeOut){
-    useEffect(()=>{
-            setInterval(fn,timeout);
-    },[])
+import React from 'react';
+
+export default function App(){
+    return(
+
+        <>
+        <Todo 
+        title: Nithin
+        description: he is noice guy
+        done: false
+        />
+        </>
+    ) 
+
+}
+interface TodoProp{
+    title:string,
+    description:string,
+    done:boolean,
 }
 
-function App() {
-    const [count,setCount] = useState(0);
+function Todo(props:TodoProp
+){
+    return <div>
+        <h1>
+            {props.title}
+            </h1>
 
-    useInterval(()=>{
-        setCount(c => c+1);
-    },1000)
-  
-    return (
-      <>
-        Timer is at {count}
-      </>
-    )
-  }
-  
-  export default App
+            <h2>
+                {props.description}
+                </h2>
+
+        </div>
+
+}
